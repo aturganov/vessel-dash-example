@@ -20,6 +20,10 @@ ETL - можно поставить на Cron
 Система глючная visiologн, несколько раз терял часть несохранненного дела,
 при добавлнии фонового черного цвета - ошибки сохранения
 
+VISIOLOGY JSON:
+
+[AТ_Основной.json](AТ_Основной.json)
+
 Скриншоты BI: 
 ![](images/image1.png)
 ![](images/image2.png)
@@ -27,6 +31,7 @@ ETL - можно поставить на Cron
 ![](images/image5.png)
 ![](images/image6.png)
 ![](images/image7.png)
+
 
 Ролики работы:
 
