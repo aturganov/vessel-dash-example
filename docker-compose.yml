@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: ship_data_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: vesseldb
+      POSTGRES_USER: vesseluser
+      POSTGRES_PASSWORD: vesselpass123
+      POSTGRES_INITDB_ARGS: "--encoding=UTF-8 --lc-collate=C --lc-ctype=C"
+    ports:
+      - "5432:5432"
+    volumes:
+      # Mount PostgreSQL data directory
+      - /opt/db/postgres_data:/var/lib/postgresql/data
+      # Mount initialization scripts
+      - ./create_postgresql_schema.sql:/docker-entrypoint-initdb.d/01-create-schema.sql
+    networks:
+      - ship_data_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d vesseldb"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  ship_data_network:
+    driver: bridge

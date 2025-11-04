@@ -1,0 +1,30 @@
+# Python dependencies for Ship Data ETL Pipeline
+# Install with: pip install -r requirements.txt
+
+# Core data processing
+pandas>=2.0.0
+openpyxl>=3.1.0
+xlrd>=2.0.0
+
+# Database connectivity
+psycopg2-binary>=2.9.0
+SQLAlchemy>=2.0.0
+
+# Data validation and utilities
+python-dateutil>=2.8.0
+pytz>=2023.3
+
+# Logging and configuration
+python-dotenv>=1.0.0
+
+# Optional: For enhanced data processing
+numpy>=1.24.0
+
+# Optional: For data quality checks
+great-expectations>=0.18.0
+
+# Development dependencies (optional)
+pytest>=7.0.0
+pytest-cov>=4.0.0
+black>=23.0.0
+flake8>=6.0.0
